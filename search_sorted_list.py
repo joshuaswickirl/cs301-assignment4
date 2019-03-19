@@ -1,5 +1,5 @@
-#
-#
+#   
+#   1. Search sorted list function
 #
 
 def search_sorted_list(sorted_list, item):
@@ -10,7 +10,7 @@ def search_sorted_list(sorted_list, item):
     
     item_found = False
     start = 0
-    end = len(sorted_list)
+    end = len(sorted_list) - 1
     mid = end // 2
     
     while not item_found:
@@ -20,12 +20,12 @@ def search_sorted_list(sorted_list, item):
         elif item in half_list:
             item_found = True
             break
-        elif start == end-1:
-            if sorted_list[end-1] == item:
+        elif start == end:
+            if sorted_list[end] == item:
                 item_found = True
             break
         else:
             start = mid
-            mid = (end + mid) // 2
+            mid = ((end + 1) + mid) // 2
 
     return item_found
