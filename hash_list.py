@@ -15,14 +15,24 @@ class HashList():
         """
         Finds the index for the given item.
         """
-        pass
+        item_index = 0
+        item_found = False
+        for list_item in self.hash_list:
+            if list_item == item:
+                item_found = True
+                break
+            else:
+                item_index += 1
+        if not item_found:
+            raise IndexError
+        return item_index
 
 
     def put(self, item):
         """
         Adds the given item to the list.
 
-        If the list is full, raises and error.
+        If the list is full, raises an error.
         """
         pass
 
