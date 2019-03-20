@@ -1,7 +1,6 @@
 #
-#   
+#   5. Sort list function
 #
-
 
 def sort_list(ulist):
     """

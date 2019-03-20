@@ -1,5 +1,5 @@
 #
-#   Hash list class
+#   2. Hash list class
 #
 
 class HashList():
