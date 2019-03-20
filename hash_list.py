@@ -8,7 +8,7 @@ class HashList():
         """
         Creates a new empty HashList of the given length.
         """
-        pass
+        self.hash_list = [None] * length
 
     
     def hashfunction(self, item):
