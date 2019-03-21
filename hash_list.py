@@ -13,19 +13,9 @@ class HashList():
     
     def hashfunction(self, item):
         """
-        Finds the index for the given item.
+        Tells you which slot the item is assigned to.
         """
-        item_index = 0
-        item_found = False
-        for list_item in self.hash_list:
-            if list_item == item:
-                item_found = True
-                break
-            else:
-                item_index += 1
-        if not item_found:
-            raise IndexError
-        return item_index
+        pass
 
 
     def put(self, item):
