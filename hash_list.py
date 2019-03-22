@@ -9,13 +9,14 @@ class HashList():
         Creates a new empty HashList of the given length.
         """
         self.hash_list = [None] * length
+        self.hash_length = length
 
     
     def hashfunction(self, item):
         """
-        Tells you which slot the item is assigned to.
+        Tells you which slot the item should be assigned to.
         """
-        pass
+        return item % self.hash_length
 
 
     def put(self, item):
