@@ -49,7 +49,7 @@ def test_put_3():
 # HashList.contains(item)
 def test_contains_1():
     list_length = 10
-    item1 = 10
+    item = 10
     _hashlist = HashList(list_length)
     _hashlist.put(item)
     assert _hashlist.contains(item) == True
@@ -63,7 +63,18 @@ def test_contains_2():
     _hashlist.put(item1)
     _hashlist.put(item2)
     _hashlist.put(item3)
-    assert _hashlist.contains(item3) == 69
+    assert _hashlist.contains(item3) == True
+
+def test_contains_3():
+    list_length = 10
+    item1 = 10
+    item2 = 59
+    item3 = 69
+    _hashlist = HashList(list_length)
+    _hashlist.put(item1)
+    _hashlist.put(item2)
+    _hashlist.put(item3)
+    assert _hashlist.contains(11) == False
 
 # HashList.items()
 def test_items_1():
