@@ -86,7 +86,7 @@ def test_items_1():
     _hashlist.put(item1)
     _hashlist.put(item2)
     _hashlist.put(item3)
-    assert _hashlist.items() == [69,10,59]
+    assert _hashlist.items() == [10,69,59]
 
 def test_items_2():
     list_length = 10

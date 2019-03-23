@@ -66,7 +66,13 @@ class HashList():
         """
         Returns a list of all items in the HashList.
         """
-        pass
+        list_o_items = []
+        for item in self.hash_list:
+            if item == None:
+                continue
+            else:
+                list_o_items.append(item)
+        return list_o_items
 
 
 #
