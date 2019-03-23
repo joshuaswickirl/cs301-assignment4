@@ -22,10 +22,23 @@ class HashList():
     def put(self, item):
         """
         Adds the given item to the list.
-
         If the list is full, raises an error.
         """
-        pass
+        index = self.hashfunction(item)
+        empty_index = False
+        slots_checked = 0
+        while not empty_index:
+            if self.hash_list[index] == None:
+                self.hash_list.insert(index,item)
+                empty_index = True
+            elif index == self.hash_length - 1:
+                index = 0
+                slots_checked += 1
+            elif slots_checked == self.hash_length:
+                raise RuntimeError
+            else:
+                index += 1
+                slots_checked += 1
 
 
     def contains(self, item):
