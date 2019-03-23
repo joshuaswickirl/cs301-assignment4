@@ -79,10 +79,27 @@ class HashList():
 #   3. Explain the running times of the HashList methods
 #      in both the best-case scenario and worst-case scenario.
 #
+#   .hashfunction
+#       Best-case and worst-case scenario this method 
+#       runs in constant time.
 #
+#   .put
+#       Best-case runs in constant time, worst-case runs in 
+#       linear time.
+#
+#   .contains
+#       Best-case scenario this function runs in constant time 
+#       and worst-case scenario this function runs in linear time
+#   
+#   .items 
+#       Best-case and worst-case run in linear time.
+#   
 
 
 #
 #   4. How would we convert the HashList into a dictionary?
 #
+#   We would convert the HashList into a dictionary by using
+#   what is returned by the .hashfunction as the key and the 
+#   item in the associated slot as the value.
 #
