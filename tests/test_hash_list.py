@@ -1,3 +1,4 @@
+import env
 import pytest
 
 from hash_list import HashList
@@ -48,7 +49,7 @@ def test_put_3():
 # HashList.contains(item)
 def test_contains_1():
     list_length = 10
-    item1 = 10 
+    item1 = 10
     _hashlist = HashList(list_length)
     _hashlist.put(item)
     assert _hashlist.contains(item) == True
