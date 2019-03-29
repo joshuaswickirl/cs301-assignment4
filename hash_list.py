@@ -29,7 +29,7 @@ class HashList():
         slots_checked = 0
         while not empty_index:
             if self.hash_list[index] == None:
-                self.hash_list.insert(index,item)
+                self.hash_list[index] = item
                 empty_index = True
             elif index == self.hash_length - 1:
                 index = 0
@@ -46,19 +46,18 @@ class HashList():
         Returns True if the given item is in the list; False otherwise.
         """
         contains_item = False
-        slots_checked = 0
+
         index = self.hashfunction(item)
         while not contains_item:
             if self.hash_list[index] == item:
                 contains_item = True
+            elif self.hash_list[index] == None:
+                break
             elif index == self.hash_length - 1:
                 index = 0
-                slots_checked += 1
-            elif slots_checked == self.hash_length:
-                break
             else:
                 index += 1
-                slots_checked += 1
+                
         return contains_item
 
 
@@ -89,7 +88,7 @@ class HashList():
 #
 #   .contains
 #       Best-case scenario this function runs in constant time 
-#       and worst-case scenario this function runs in linear time
+#       and worst-case scenario this function runs in linear time.
 #   
 #   .items 
 #       Best-case and worst-case run in linear time.

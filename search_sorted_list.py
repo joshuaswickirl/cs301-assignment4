@@ -11,21 +11,23 @@ def search_sorted_list(sorted_list, item):
     item_found = False
     start = 0
     end = len(sorted_list) - 1
-    mid = end // 2
+
+    if sorted_list[start] > item or sorted_list[end] < item:
+        return False
     
     while not item_found:
-        half_list = sorted_list[start:mid]
-        if sorted_list[start] > item:
-            break
-        elif item in half_list:
+        mid = (end - start)//2 + start
+        if sorted_list[mid] == item:
             item_found = True
-            break
-        elif start == end:
+        elif start == end-1:
             if sorted_list[end] == item:
                 item_found = True
             break
-        else:
+        elif sorted_list[mid] > item:
+            start = start
+            end = mid
+        elif sorted_list[mid] < item:
             start = mid
-            mid = ((end + 1) + mid) // 2
+            end = end
 
     return item_found
