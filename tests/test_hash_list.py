@@ -76,6 +76,17 @@ def test_contains_3():
     _hashlist.put(item3)
     assert _hashlist.contains(11) == False
 
+def test_contains_4():
+    list_length = 3
+    item1 = 1
+    item2 = 2
+    item3 = 3
+    _hashlist = HashList(list_length)
+    _hashlist.put(item1)
+    _hashlist.put(item2)
+    _hashlist.put(item3)
+    assert _hashlist.contains(4) == False
+
 # HashList.items()
 def test_items_1():
     list_length = 10

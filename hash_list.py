@@ -46,17 +46,21 @@ class HashList():
         Returns True if the given item is in the list; False otherwise.
         """
         contains_item = False
-
+        slots_searched = 0
         index = self.hashfunction(item)
         while not contains_item:
             if self.hash_list[index] == item:
                 contains_item = True
             elif self.hash_list[index] == None:
                 break
+            elif slots_searched >= self.hash_length-1:
+                break
             elif index == self.hash_length - 1:
                 index = 0
+                slots_searched += 1
             else:
                 index += 1
+                slots_searched += 1
                 
         return contains_item
 
